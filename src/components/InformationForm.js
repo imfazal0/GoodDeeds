@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { useRef, useState } from 'react'
-import { FlatList, KeyboardAvoidingView, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
+import {useState } from 'react'
+import {  KeyboardAvoidingView, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 const InformationForm = () => {
@@ -19,8 +19,8 @@ const InformationForm = () => {
     }
 
     function handleContinue(){
-        AsyncStorage.setItem("name",userData.name)
-        AsyncStorage.setItem("name",userData.age)
+        AsyncStorage.setItem("name",JSON.stringifyuserData)
+        AsyncStorage.setItem('firstTimeOpen' , 'true')
     }
 
     return (

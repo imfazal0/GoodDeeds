@@ -1,17 +1,19 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import GetStartedScreen from '../components/GetStartedScreen'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import InformationForm from '../components/InformationForm';
 
 
-const BoardingScreen = () => {
-  const [currentPage , setCurrentPage] = useState(false);
+const BoardingScreen = ({boardingScreen , setBoardingScreen}) => {
+  const [currentScreen, setCurrentScreen] = useState(true);
 
   return (
-    <View>
-      {currentPage && <GetStartedScreen/>}
-      <InformationForm/>
-    </View>
+    <>
+      {!boardingScreen && <View>
+        {currentScreen && <GetStartedScreen setCurrentScreen={setCurrentScreen} />}
+        {!currentScreen && <InformationForm />}
+      </View>}
+    </>
   )
 }
 
