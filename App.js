@@ -12,7 +12,6 @@ const App =  () => {
     useEffect(() => {
     const data = async () => {
       const data = await AsyncStorage.getItem('firstTimeOpen')
-      console.log(data);
       setBoardingScreen(Boolean(data))
     };
     data();

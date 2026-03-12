@@ -7,9 +7,7 @@ const Header = () => {
     let [userData , setUserData] = useState('name');
     useEffect(()=>{
         const setData =  async()=>{
-            setUserData(JSON.parse(await AsyncStorage.getItem('name')))
-            console.log(userData);
-            
+            setUserData(JSON.parse(await AsyncStorage.getItem('name')))            
         }
         setData();
     },[]);
